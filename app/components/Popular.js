@@ -1,4 +1,32 @@
 var React = require('react');
+var PropTypes = require('prop-types')
+
+// Stateless functional component
+// Each component is receiving its data as
+// props then simply presenting that data.
+function SelectLanguage (props) {
+    var languages = ['All', 'JS', 'Ruby', 'Java', 'CSS', 'Python'];
+
+    return (
+        <ul className='languages'>
+            {languages.map(function (language) {
+                return (
+                    <li
+                        style={ language === props.selectedLanguage ? { color: '#d0021b' }: null }
+                        onClick={props.onSelect.bind(null, language)}
+                        key={language}>
+                        {language}
+                    </li>
+                )
+            })}
+        </ul>
+    )
+}
+
+SelectLanguage.PropTypes = {
+    selectedLanguage: PropTypes.string.isRequired,
+    onSelect: PropTypes.func.isRequired
+}
 
 class Popular extends React.Component {
     constructor(props) {
@@ -19,21 +47,13 @@ class Popular extends React.Component {
     }
 
     render() {
-        var languages = ['All', 'JS', 'Ruby', 'Java', 'CSS', 'Python'];
-        
         return (
-            <ul className='languages'>
-                {languages.map(function (language) {
-                    return (
-                        <li
-                            style={ language === this.state.selectedLanguage ? { color: '#d0021b' }: null }
-                            onClick={this.updateLanguage.bind(null, language)}
-                            key={language}>
-                            {language}
-                        </li>
-                    )
-                }, this)}
-            </ul>
+            <div>
+                <SelectLanguage
+                    selectedLanguage={this.state.selectedLanguage}
+                    onSelect={this.updateLanguage}
+                />
+            </div>
         )
     }
 }
