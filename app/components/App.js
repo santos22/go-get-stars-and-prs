@@ -1,14 +1,14 @@
-var React = require('react');
-var Popular = require('./Popular')
-var ReactRouter = require('react-router-dom');
-var Router = ReactRouter.BrowserRouter;
-var Route = ReactRouter.Route;
-var Switch = ReactRouter.Switch;
-var Nav = require('./Nav');
-var Home = require('./Home');
-var Battle = require('./Battle')
+const React = require('react');
+const ReactRouter = require('react-router-dom');
+const Router = ReactRouter.BrowserRouter;
+const Route = ReactRouter.Route;
+const Switch = ReactRouter.Switch;
+const Nav = require('./Nav');
+const Home = require('./Home');
+const Popular = require('./Popular')
+const PullRequests = require('./PullRequests')
 
-// create React component definition named App
+// Create React component definition named App
 class App extends React.Component {
     render() {
         return (
@@ -17,11 +17,9 @@ class App extends React.Component {
                     <Nav />
                     <Switch>
                         <Route exact path='/' component={Home}/>
-                        <Route exact path='/battle' component={Battle}/>
                         <Route path='/popular' component={Popular}/>
-                        <Route render={function() {
-                            return <p>Not Found</p>
-                        }} />
+                        <Route path='/closed' component={PullRequests}/>
+                        <Route render={() => <p>Not Found</p>} />
                     </Switch>
                 </div>
             </Router>
@@ -29,5 +27,5 @@ class App extends React.Component {
     }
 }
 
-// export App component so index.js can require it
+// Export App component so index.js can require it
 module.exports = App;

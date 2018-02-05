@@ -1,5 +1,5 @@
-var React = require('react');
-var NavLink = require('react-router-dom').NavLink;
+const React = require('react');
+const NavLink = require('react-router-dom').NavLink;
 
 function Nav() {
     return (
@@ -10,13 +10,13 @@ function Nav() {
                 </NavLink>
             </li>
             <li>
-                <NavLink activeClassName='active' to='/battle'>
-                    Battle
+                <NavLink activeClassName='active' to='/popular'>
+                    Popular
                 </NavLink>
             </li>
             <li>
-                <NavLink activeClassName='active' to='/popular'>
-                    Popular
+                <NavLink activeClassName='active' to='/closed'>
+                    Pull Requests
                 </NavLink>
             </li>
         </ul>
