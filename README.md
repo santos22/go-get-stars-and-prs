@@ -15,14 +15,14 @@ done
 ```
 
 ## Back-end
-### Navigate to the `back-end` directory and run the following command:
+Navigate to the `back-end` directory and run the following command:
 ```
 go run main.go
 ```
 The server is running at localhost:8081
 
 ## Front-end
-### From the root directory you can run the following commands:
+From the root directory you can run the following commands:
 ```
 npm install
 
