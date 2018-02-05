@@ -30,7 +30,7 @@ npm run start
 ```
 The app should open up on your browser and is running at localhost:8080
 
-Enhancements:
+## Enhancements
 - [ ] Implement caching to limit calls to GitHub API
 - [ ] For popular route, call endpoint from Go back-end
 - [ ] Design UI for pull requests route similar to https://github.com/pulls
