@@ -13,7 +13,7 @@ done
 ```
 
 ## Back-end
-Navigate to the `back-end` directory and run the following commands:
+Navigate to the `back-end` directory and run one of the following commands:
 
 Go backend
 ```
